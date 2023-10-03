@@ -18,6 +18,10 @@ void main() {
 class DicePage extends StatelessWidget {
   const DicePage({super.key});
 
+  void printData() {
+    print('Button was pressed');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -25,14 +29,14 @@ class DicePage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: TextButton(
-              onPressed: () => print('Left button was pressed'),
+              onPressed: () => printData(),
               child: Image.network(
                   'https://www.clipartmax.com/png/middle/6-68663_dice-clipart-single-arithmetic.png'),
             ),
           ),
           Expanded(
             child: TextButton(
-              onPressed: () => print('Right button was pressed'),
+              onPressed: () => printData(),
               child: Image.network(
                   'https://www.clipartmax.com/png/middle/6-68663_dice-clipart-single-arithmetic.png'),
             ),
