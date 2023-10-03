@@ -1,32 +1,44 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-        backgroundColor: Colors.blueGrey[900],
+  return runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.red,
         appBar: AppBar(
-          backgroundColor: Colors.amber[700],
-          title: const Text(
-            'Abhishek',
-            style: TextStyle(
-              fontSize: 20.0,
+          title: const Text('Dicee'),
+          backgroundColor: Colors.red,
+        ),
+        body: const DicePage(),
+      ),
+    ),
+  );
+}
+
+class DicePage extends StatelessWidget {
+  const DicePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextButton(
+              onPressed: () => print('Left button was pressed'),
+              child: Image.network(
+                  'https://www.clipartmax.com/png/middle/6-68663_dice-clipart-single-arithmetic.png'),
             ),
           ),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Image(
-                image: NetworkImage(
-                    'https://images8.alphacoders.com/739/thumbbig-739812.webp')),
-            const Text('Description'),
-            IconButton(
-                color: Colors.white,
-                hoverColor: Colors.amber,
-                onPressed: () => print('Check'),
-                icon: const Icon(Icons.add)),
-          ],
-        )),
-  ));
+          Expanded(
+            child: TextButton(
+              onPressed: () => print('Right button was pressed'),
+              child: Image.network(
+                  'https://www.clipartmax.com/png/middle/6-68663_dice-clipart-single-arithmetic.png'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
